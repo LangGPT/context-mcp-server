@@ -203,7 +203,7 @@ python -m context_mcp_server
 Sets the working directory where files will be saved when using the `fetch_and_save` tool.
 
 - **Default**: `data`
-- **Priority**: Command line `--work-dir` argument > `CONTEXT_DIR` environment variable > default value `data`
+- **Priority**: `CONTEXT_DIR` environment variable > default value `data`
 
 **Example:**
 ```bash
@@ -211,15 +211,6 @@ export CONTEXT_DIR=/path/to/your/data
 ```
 
 ### Command Line Arguments
-
-#### --work-dir
-
-Specifies the working directory where files will be saved. This overrides the `CONTEXT_DIR` environment variable.
-
-**Example:**
-```bash
-python -m context_mcp_server --work-dir /custom/path
-```
 
 #### --user-agent
 
@@ -267,11 +258,6 @@ uv run python -m context_mcp_server
 
 With custom work directory:
 ```bash
-uv run python -m context_mcp_server --work-dir /custom/path
-```
-
-With environment variable:
-```bash
 CONTEXT_DIR=/custom/path uv run python -m context_mcp_server
 ```
 
@@ -282,7 +268,7 @@ npx @modelcontextprotocol/inspector uv run python -m context_mcp_server
 
 With custom work directory:
 ```bash
-npx @modelcontextprotocol/inspector uv run python -m context_mcp_server --work-dir /custom/path
+CONTEXT_DIR=/custom/path npx @modelcontextprotocol/inspector uv run python -m context_mcp_server
 ```
 
 ### Making Changes

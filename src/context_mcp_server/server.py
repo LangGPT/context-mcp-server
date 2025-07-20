@@ -203,15 +203,18 @@ def generate_filename_from_url(url: str) -> str:
 async def serve(
     custom_user_agent: str | None = None,
     proxy_url: str | None = None,
-    work_dir: str = "data",
+    work_dir: str | None = None,
 ) -> None:
     """Run the fetch MCP server.
 
     Args:
         custom_user_agent: Optional custom User-Agent string to use for requests
         proxy_url: Optional proxy URL to use for requests
-        work_dir: Working directory for saving files (default: "data")
+        work_dir: Working directory for saving files (default: CONTEXT_DIR env var or "data")
     """
+    # Use CONTEXT_DIR environment variable if work_dir is not provided
+    if work_dir is None:
+        work_dir = os.environ.get('CONTEXT_DIR', 'data')
     server = Server("mcp-fetch")
     user_agent_autonomous = custom_user_agent or DEFAULT_USER_AGENT_AUTONOMOUS
     user_agent_manual = custom_user_agent or DEFAULT_USER_AGENT_MANUAL
