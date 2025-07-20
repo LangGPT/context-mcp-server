@@ -215,7 +215,7 @@ async def serve(
     # Use CONTEXT_DIR environment variable if work_dir is not provided
     if work_dir is None:
         work_dir = os.environ.get('CONTEXT_DIR', 'data')
-    server = Server("mcp-fetch")
+    server = Server("context-mcp-server")
     user_agent_autonomous = custom_user_agent or DEFAULT_USER_AGENT_AUTONOMOUS
     user_agent_manual = custom_user_agent or DEFAULT_USER_AGENT_MANUAL
 

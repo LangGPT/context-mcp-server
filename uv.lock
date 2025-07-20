@@ -131,7 +131,7 @@ wheels = [
 
 [[package]]
 name = "context-mcp-server"
-version = "0.6.5"
+version = "1.4.0"
 source = { editable = "." }
 dependencies = [
     { name = "httpx" },

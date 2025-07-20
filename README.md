@@ -115,21 +115,19 @@ Add to your VS Code settings or `.vscode/mcp.json`:
 
 ```json
 {
-  "mcp": {
-    "servers": {
-      "context-mcp-server": {
-        "command": "uv",
-        "args": [
-          "run",
-          "--directory",
-          "/path/to/your/context-mcp-server",
-          "python",
-          "-m",
-          "context_mcp_server"
-        ],
-        "env": {
-          "CONTEXT_DIR": "/path/to/your/data/directory"
-        }
+  "mcpServers": {
+    "context-mcp-server": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "/path/to/your/context-mcp-server",
+        "python",
+        "-m",
+        "context_mcp_server"
+      ],
+      "env": {
+        "CONTEXT_DIR": "/path/to/your/data/directory"
       }
     }
   }
